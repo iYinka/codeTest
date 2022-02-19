@@ -1,0 +1,349 @@
+.back {
+  width: 100%;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+.inputs {
+  margin-top: 20px;
+  overflow-y: scroll;
+  background-color: var(--white);
+  width: 400px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 20px;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.btn {
+  margin: 20px 0 0 0;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  font: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--primary);
+  box-shadow: var(--box-shadow);
+}
+
+.inputs label {
+  text-align: center;
+  font: var(--font);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.inputs input[type='text'] {
+  border: 1px solid #707070;
+  border-radius: 5px;
+  width: 100%;
+  height: 45px;
+  color: var(--primary);
+}
+
+.inputs input[type='email'] {
+  border: 1px solid #707070;
+  border-radius: 5px;
+  width: 100%;
+  height: 45px;
+  color: var(--primary);
+}
+
+.transInfo h3 {
+  margin-top: 20px;
+  font: var(--font);
+  font-size: 14px;
+}
+
+
+.loader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader p {
+  font: var(--font);
+  font-size: 12;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+
+/* Tables */
+.tableContainer {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+  width: auto;
+  height: auto;
+  /* background-color: #ffffff; */
+  border-radius: 10px;
+  margin: 20px 0px 100px 0px;
+}
+
+
+
+
+/* Table */
+.tableContent {
+  overflow-x: auto;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.table {
+  width: auto;
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-spacing: 0px;
+  table-layout: fixed;
+  transition: all .4s ease-in-out;
+}
+
+.table thead {
+  background-color: #A2D2FF;
+  font-family: "Manrope";
+  position: sticky;
+  top: 0;
+  z-index: -1;
+  transition: all .4s ease-in-out;
+}
+
+
+
+.table thead tr th {
+  padding: 20px 20px 12px 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: all .4s ease-in-out;
+}
+
+.table tbody {
+  width: 100%;
+  font-family: "Manrope";
+  background-color: #ffffff;
+  color: #2C3E50;
+  height: auto;
+  max-height: 200px;
+  transition: all .4s ease-in-out;
+}
+
+
+.table tbody tr td {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.table tbody tr td .break__Word {
+  word-break: break-all;
+}
+
+.actions {
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+  transition: all .4s ease-in-out;
+}
+
+.actions button {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  width: 100px;
+  height: 35px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.16);
+  font-weight: 600;
+  transition: all .4s ease-in-out;
+}
+
+
+.delete,
+.delete menu {
+  background-color: #FF0000;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  width: 100px;
+  height: 35px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.16);
+  font-weight: 600;
+  transition: all .4s ease-in-out;
+  text-align: center;
+}
+
+.delete:hover {
+  background-color: #c00622;
+}
+
+.update {
+  background-color: #bb8d0e;
+}
+
+.update:hover {
+  background-color: #ad8518;
+}
+
+/*
+.active {
+  color: #3CBE03;
+}
+
+.inactive {
+  color: #FF0000;
+}
+
+.table tbody tr td .action .activate {
+  border: 1px solid #FF0000;
+  color: #ffffff;
+  border-radius: 5px;
+  height: 40px;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #FF0000;
+  margin-right: 10px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.table tbody tr td .action .activate:hover {
+  color: #ffffff;
+  background-color: #FF0000;
+  border: 1px solid #FF0000;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+
+.table tbody tr td .action .activate:focus {
+  color: #ffffff;
+  background-color: #FF0000;
+  border: 1px solid #FF0000;
+}
+
+.table tbody tr td .action .deactivate {
+  border: 1px solid #42c10a;
+  color: #ffffff;
+  border-radius: 5px;
+  height: 40px;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 12px;
+  background-color: #42c10a;
+  margin-right: 10px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.table tbody tr td .action .deactivate:hover {
+  color: #ffffff;
+  background-color: #42c10a;
+  border: 1px solid #42c10a;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+
+.table tbody tr td .action .deactivate:focus {
+  color: #ffffff;
+  background-color: #42c10a;
+  border: 1px solid #42c10a;
+} */
+
+/* Modal */
+.modal_h3 {
+  font: var(--font);
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+
+.modal_img {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.modal_img img {
+  width: 100px;
+  height: 50px;
+}
+
+.modal_btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal_btns button {
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: var(--white);
+  font: var(--font);
+  width: 120px;
+  height: 35px;
+  margin-top: 20px;
+}
+
+.modal_btns .activate {
+  background-color: #FF0000;
+}
+
+.modal_btns .activate:hover {
+  background-color: #d80505;
+  box-shadow: var(--box-shadow);
+}
+
+.modal_btns .reverse {
+  background-color: var(--primary);
+}
+
+.modal_btns .reverse:hover {
+  background-color: var(--hover);
+  box-shadow: var(--box-shadow);
+}
+
+/* Tables ends */
+
+
+/* Translation */
+.animate {
+  /* animation-name: myEffect; */
+  /* animation-duration: 3s; */
+  animation: myEffect 200ms ease-in;
+}
+
+@keyframes myEffect {
+  0% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Translatiion End */

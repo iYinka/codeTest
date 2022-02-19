@@ -1,0 +1,96 @@
+.charts {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+  padding: 20px;
+  margin: 30px;
+  height: 400px;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topBar h4 {
+  font-weight: 300;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.charts p {
+  font-family: var(--font);
+  font-weight: 600;
+  color: #A2A2A2;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin: 0;
+}
+
+.charts h4 {
+  font-family: var(--font);
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+}
+
+.charts .chartContainer {
+  /* padding: 10px; */
+  position: relative;
+  height: 300px;
+  /* max-height: 400px; */
+}
+
+@media(max-width: 480px) {
+  .charts {
+    height: 500px;
+  }
+
+  .charts .chartContainer {
+    height: 350px;
+  }
+
+  .charts .chartContainer canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
+
+.loaderBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--btn-bg);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 12px;
+  transition: var(--btn-transition);
+  min-width: 100px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* BUTTONS Blinking ENDS*/
