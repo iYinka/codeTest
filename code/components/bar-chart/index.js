@@ -5,15 +5,8 @@ import { Spin } from "antd";
 import Chart from "chart.js/auto";
 
 const BarChart = () => {
-    const [chartData, setChartData] = useState([]);
     const [awardsData, setAwardsData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-
-    const [newAwardsData, setNewAwardsData] = useState();
-
-    // setTimeout(() => {
-    //     setIsLoading(false);
-    // }, 3000);
 
     const AwardChartData = async () => {
         setIsLoading(true);
