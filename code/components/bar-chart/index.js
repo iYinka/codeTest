@@ -161,6 +161,9 @@ const BarChart = () => {
                     />
                 )}
             </div>
+            <div className={styles.bottomBar}>
+                <h4>Powered by RapidAPI </h4>
+            </div>
         </div>
     );
 };
