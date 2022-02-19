@@ -28,6 +28,11 @@ function JsonTable() {
         u_email: "",
     });
 
+    // Create Controller
+    useEffect(() => {
+        GetUsers();
+    }, []);
+
     const Validation = () => {
         if (!values.name || values.name === "") {
             message.error({
@@ -60,8 +65,6 @@ function JsonTable() {
         }
         CreateUser();
     };
-
-    // Create Controller
 
     const CreateUser = async () => {
         try {
@@ -114,10 +117,6 @@ function JsonTable() {
             console.log(err);
         }
     };
-
-    useEffect(() => {
-        GetUsers();
-    }, []);
 
     // Read Controller END
 
@@ -184,7 +183,6 @@ function JsonTable() {
                             return user.id !== singleUser?.id;
                         })
                     );
-                    console.log(users);
                     openNotification({
                         type: "success",
                         title: "Successful",
@@ -269,7 +267,7 @@ function JsonTable() {
     return (
         <div className={styles.back}>
             <Row gutter={[16, 16]}>
-                <Col lg={14} sm={24}>
+                <Col lg={13} sm={24}>
                     <div className={styles.tableContainer}>
                         <div className={styles.tableContent}>
                             <table className={styles.table}>
@@ -321,21 +319,22 @@ function JsonTable() {
                                                                 styles.update
                                                             }
                                                             overlay={x}
-                                                            trigger={["click"]}
                                                         >
                                                             <span
-                                                                onClick={() => {
-                                                                    setSingleUser(
-                                                                        x
-                                                                    ),
-                                                                        setUpdateUser(
-                                                                            true
+                                                                onClick={(
+                                                                    e
+                                                                ) => {
+                                                                    e.preventDefault(),
+                                                                        setSingleUser(
+                                                                            x
                                                                         ),
-                                                                        console.log(
-                                                                            {
-                                                                                singleUser:
-                                                                                    x,
-                                                                            }
+                                                                        setTimeout(
+                                                                            () => {
+                                                                                setUpdateUser(
+                                                                                    true
+                                                                                );
+                                                                            },
+                                                                            500
                                                                         );
                                                                 }}
                                                             >
@@ -347,24 +346,25 @@ function JsonTable() {
                                                                 styles.delete
                                                             }
                                                             overlay={x}
-                                                            trigger={["click"]}
                                                         >
                                                             <span
-                                                                onClick={() => {
-                                                                    setSingleUser(
-                                                                        x
-                                                                    ),
-                                                                        setShowModal(
-                                                                            true
+                                                                onClick={(
+                                                                    e
+                                                                ) => {
+                                                                    e.preventDefault(),
+                                                                        setSingleUser(
+                                                                            x
                                                                         ),
                                                                         setUpdateUser(
                                                                             false
                                                                         ),
-                                                                        console.log(
-                                                                            {
-                                                                                singleUser:
-                                                                                    x,
-                                                                            }
+                                                                        setTimeout(
+                                                                            () => {
+                                                                                setShowModal(
+                                                                                    true
+                                                                                );
+                                                                            },
+                                                                            500
                                                                         );
                                                                 }}
                                                             >

@@ -1,9 +1,15 @@
 .back {
-  width: 100%;
+  /* width: 100%;
   margin: 10px 0 0 0;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-content: center; */
+  /* background-color: var(--white); */
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+  padding: 20px;
+  margin: 30px;
+  height: auto;
 }
 
 
