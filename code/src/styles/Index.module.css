@@ -1,10 +1,4 @@
 .back {
-  /* width: 100%;
-  margin: 10px 0 0 0;
-  display: flex;
-  justify-content: center;
-  align-content: center; */
-  /* background-color: var(--white); */
   border-radius: 10px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
   padding: 20px;
@@ -27,6 +21,8 @@
   padding: 20px;
   border-radius: 5px;
   transition: var(--transition);
+  animation: myEffect 200ms ease-in;
+
 }
 
 .btn {
@@ -37,7 +33,7 @@
   width: 100%;
   height: 40px;
   font: var(--font);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   text-align: center;
   color: var(--white);
@@ -45,11 +41,16 @@
   box-shadow: var(--box-shadow);
 }
 
+.btn:hover {
+  background-color: var(--hover);
+}
+
 .inputs label {
   text-align: center;
   font: var(--font);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
+  margin: 0
 }
 
 .inputs input[type='text'] {
@@ -69,9 +70,9 @@
 }
 
 .transInfo h3 {
-  margin-top: 20px;
+  margin-top: 15px;
   font: var(--font);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 
@@ -108,7 +109,7 @@
 .tableContent {
   overflow-x: auto;
   border-radius: 5px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .table {
@@ -153,7 +154,7 @@
 
 .table tbody tr td {
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 
@@ -162,7 +163,7 @@
 }
 
 .actions {
-  width: 250px;
+  width: 240px;
   display: flex;
   justify-content: space-around;
   transition: all .4s ease-in-out;
@@ -276,8 +277,8 @@
 /* Modal */
 .modal_h3 {
   font: var(--font);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 13px;
   text-align: center;
 }
 
@@ -300,12 +301,13 @@
 
 .modal_btns button {
   cursor: pointer;
-  font-size: 14px;
   border: none;
   outline: none;
   border-radius: 4px;
   color: var(--white);
   font: var(--font);
+  font-size: 12px;
+  font-weight: 400;
   width: 120px;
   height: 35px;
   margin-top: 20px;
@@ -322,6 +324,7 @@
 
 .modal_btns .reverse {
   background-color: var(--primary);
+  text-transform: uppercase;
 }
 
 .modal_btns .reverse:hover {

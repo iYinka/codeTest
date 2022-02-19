@@ -209,11 +209,11 @@ function JsonTable() {
             <div className={styles.modal_img}></div>
             <h3 className={styles.modal_h3}>
                 Do you want to{" "}
-                <span style={{ color: "#ff0000", fontSize: "16px" }}>
+                <span style={{ color: "#ff0000", fontSize: "14px" }}>
                     DELETE{" "}
                 </span>
                 User with ID:{" "}
-                <span style={{ color: "#ff0000", fontSize: "16px" }}>
+                <span style={{ color: "#ff0000", fontSize: "14px" }}>
                     {singleUser?.id}
                 </span>
                 ?
@@ -267,7 +267,7 @@ function JsonTable() {
     return (
         <div className={styles.back}>
             <Row gutter={[16, 16]}>
-                <Col lg={13} sm={24}>
+                <Col lg={12} sm={24}>
                     <div className={styles.tableContainer}>
                         <div className={styles.tableContent}>
                             <table className={styles.table}>
