@@ -94,7 +94,7 @@ function JsonTable() {
                         placement: "topLeft",
                     });
 
-                    console.log(users);
+                    // console.log(users);
                 });
 
             setValues({
@@ -144,7 +144,7 @@ function JsonTable() {
                             return user.id === singleUser?.id;
                         })
                     );
-                    console.log({ users });
+                    // console.log({ users });
 
                     openNotification({
                         type: "success",
@@ -267,6 +267,91 @@ function JsonTable() {
     return (
         <div className={styles.back}>
             <Row gutter={[16, 16]}>
+                <Col lg={12} sm={12}>
+                    {" "}
+                    <Row gutter={[16, 16]}>
+                        <Col lg={24} sm={24}>
+                            <div className={styles.inputs}>
+                                <label htmlFor="update_country">CREATE </label>
+                                <div className={styles.transInfo}>
+                                    <h3>Name</h3>{" "}
+                                    <Input
+                                        type="text"
+                                        value={values.name}
+                                        onChange={(e) => {
+                                            setValues({
+                                                ...values,
+                                                name: e.target.value,
+                                            });
+                                        }}
+                                    />
+                                </div>
+                                <div className={styles.transInfo}>
+                                    <h3>Email</h3>{" "}
+                                    <Input
+                                        type="email"
+                                        value={values.email}
+                                        onChange={(e) => {
+                                            setValues({
+                                                ...values,
+                                                email: e.target.value,
+                                            });
+                                        }}
+                                    />
+                                </div>
+                                <button
+                                    className={styles.btn}
+                                    onClick={() => Validation()}
+                                >
+                                    Create
+                                </button>
+                            </div>
+                        </Col>{" "}
+                        <Col lg={24} sm={24}>
+                            {updateUser && (
+                                <div className={styles.inputs}>
+                                    <label htmlFor="update_country">
+                                        UPDATE{" "}
+                                    </label>
+                                    <div className={styles.transInfo}>
+                                        <h3>Name</h3>{" "}
+                                        <Input
+                                            type="text"
+                                            placeholder={singleUser?.name}
+                                            value={values.u_name}
+                                            onChange={(e) => {
+                                                setValues({
+                                                    ...values,
+                                                    u_name: e.target.value,
+                                                });
+                                            }}
+                                        />
+                                    </div>
+                                    <div className={styles.transInfo}>
+                                        <h3>Email</h3>{" "}
+                                        <Input
+                                            type="email"
+                                            placeholder={singleUser?.email}
+                                            value={values.u_email}
+                                            onChange={(e) => {
+                                                setValues({
+                                                    ...values,
+                                                    u_email: e.target.value,
+                                                });
+                                            }}
+                                        />
+                                    </div>
+                                    <button
+                                        className={styles.btn}
+                                        onClick={() => UpdateUser()}
+                                    >
+                                        Update
+                                    </button>
+                                </div>
+                            )}
+                        </Col>
+                    </Row>
+                </Col>{" "}
                 <Col lg={12} sm={24}>
                     <div className={styles.tableContainer}>
                         <div className={styles.tableContent}>
@@ -387,82 +472,6 @@ function JsonTable() {
                             />
                         )}
                     </div>
-                </Col>
-                <Col lg={6} sm={12}>
-                    <div className={styles.inputs}>
-                        <label htmlFor="update_country">CREATE </label>
-                        <div className={styles.transInfo}>
-                            <h3>Name</h3>{" "}
-                            <Input
-                                type="text"
-                                value={values.name}
-                                onChange={(e) => {
-                                    setValues({
-                                        ...values,
-                                        name: e.target.value,
-                                    });
-                                }}
-                            />
-                        </div>
-                        <div className={styles.transInfo}>
-                            <h3>Email</h3>{" "}
-                            <Input
-                                type="email"
-                                value={values.email}
-                                onChange={(e) => {
-                                    setValues({
-                                        ...values,
-                                        email: e.target.value,
-                                    });
-                                }}
-                            />
-                        </div>
-                        <button
-                            className={styles.btn}
-                            onClick={() => Validation()}
-                        >
-                            Create
-                        </button>
-                    </div>
-                    {updateUser && (
-                        <div className={styles.inputs}>
-                            <label htmlFor="update_country">UPDATE </label>
-                            <div className={styles.transInfo}>
-                                <h3>Name</h3>{" "}
-                                <Input
-                                    type="text"
-                                    placeholder={singleUser?.name}
-                                    value={values.u_name}
-                                    onChange={(e) => {
-                                        setValues({
-                                            ...values,
-                                            u_name: e.target.value,
-                                        });
-                                    }}
-                                />
-                            </div>
-                            <div className={styles.transInfo}>
-                                <h3>Email</h3>{" "}
-                                <Input
-                                    type="email"
-                                    placeholder={singleUser?.email}
-                                    value={values.u_email}
-                                    onChange={(e) => {
-                                        setValues({
-                                            ...values,
-                                            u_email: e.target.value,
-                                        });
-                                    }}
-                                />
-                            </div>
-                            <button
-                                className={styles.btn}
-                                onClick={() => UpdateUser()}
-                            >
-                                Update
-                            </button>
-                        </div>
-                    )}
                 </Col>
             </Row>
             {showModal === true && deleteModal}

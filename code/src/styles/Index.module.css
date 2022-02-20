@@ -12,7 +12,8 @@
   margin-top: 20px;
   overflow-y: scroll;
   background-color: var(--white);
-  width: 400px;
+  /* width: auto; */
+  max-width: 400px;
   box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
@@ -155,7 +156,7 @@
 .table tbody tr td {
   padding: 10px;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .table tbody tr td .break__Word {
