@@ -5,9 +5,10 @@ jobs:
         docker:
             - image: circleci/node:13.8.0
         steps:
-            - run: echo hello
-        environment:
-            - run: echo $MY_NAME
+            - run:
+                  name: "echo my name"
+                  command: |
+                      echo  $MY_NAME
     print_world:
         docker:
             - image: circleci/node:13.8.0
