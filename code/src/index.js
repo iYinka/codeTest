@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 import JsonTable from "./table";
 import BarChart from "../components/bar-chart";
+import Challenge from "./challenge";
 
 const CodeTest = () => {
     return (
@@ -13,6 +14,9 @@ const CodeTest = () => {
                 </Col>{" "}
                 <Col xs={24} sm={24} md={12}>
                     <BarChart />
+                </Col>
+                <Col xs={24} sm={24} md={12}>
+                    <Challenge />
                 </Col>
             </Row>
         </div>

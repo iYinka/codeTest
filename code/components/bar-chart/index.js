@@ -7,7 +7,9 @@ import Chart from "chart.js/auto";
 const BarChart = () => {
     const [awardsData, setAwardsData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const api = process.env.REACT_APP_RAPIDAPI_KEY;
 
+    console.log(process.env.REACT_APP_RAPIDAPI_KEY);
     const AwardChartData = async () => {
         setIsLoading(true);
 
