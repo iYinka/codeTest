@@ -3,33 +3,33 @@ version: 2.1
 orbs:
     # Declare a dependency on the welcome-orb
     welcome: circleci/welcome-orb@0.4.1
-jobs:
-    build:
+# jobs:
+#     build:
+#         docker:
+#             - image: cimg/base:2020.01
+#         steps:
+#             - checkout
+#             - run:
+#                   name: "echo an env var that is part of our project"
+#                   command: |
+#                       echo $MY_NAME
+        print_hello:
+            docker:
+                - image:  cimg/base:2020.01
+            steps:
+                - run: echo helo
+
+    print_world:
         docker:
             - image: cimg/base:2020.01
         steps:
-            - checkout
-            - run:
-                  name: "echo an env var that is part of our project"
-                  command: |
-                      echo $MY_NAME
-        # print_hello:
-        #     docker:
-        #         - image: circleci/node:13.8.0
-        #     steps:
-        #         - run: echo helo
-
-#     print_world:
-#         docker:
-#             - image: circleci/node:13.8.0
-#         steps:
-#             - run: echo world
-# workflows:
-#     # Name the workflow "welcome"
-#     welcome:
-#         # Run the welcome/run job in its own container
-#         jobs:
-#             - print hello
-#             - print world:
-#                   requires:
-#                       - print hello
+            - run: echo world
+workflows:
+    # Name the workflow "welcome"
+    welcome:
+        # Run the welcome/run job in its own container
+        jobs:
+            - print hello
+            - print world:
+                  requires:
+                      - print hello
