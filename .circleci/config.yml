@@ -136,10 +136,6 @@
 
 version: 2.1
 
-workflows:
-  build:
-    jobs:
-      - build
 jobs:
     build:
         docker:
@@ -149,9 +145,9 @@ jobs:
             - run: npm install
             - run: npm run lint
             - save_cache:
-                key: dependency-cache-{{ checksum "package-lock.json" }}
-                paths:
-                    - ./node_modules
+                  key: dependency-cache-{{ checksum "package-lock.json" }}
+                  paths:
+                      - ./node_modules
     test:
         docker:
             - image: circleci/node:13.8.0
@@ -160,7 +156,7 @@ jobs:
             - run: npm i
             - run: npm run test
             - restore_cache:
-                 key: dependency-cache-{{ checksum "package-lock.json" }}
+                  key: dependency-cache-{{ checksum "package-lock.json" }}
 
     analyze:
         docker:
