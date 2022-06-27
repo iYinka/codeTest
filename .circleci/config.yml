@@ -137,7 +137,7 @@
 version: 2.1
 
 jobs:
-    build:
+    start:
         docker:
             - image: circleci/node:13.8.0
         steps:
