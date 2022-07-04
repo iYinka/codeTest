@@ -205,50 +205,52 @@ jobs:
                         --template-file template.yml \
                         --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
                         --region us-east-1
-    # Exercise: Config and Deployment
-    configure_infrastructure:
-        docker:
-            - image: python:3.7-alpine3.11
-        steps:
-            - checkout
-            - add_ssh_keys:
-                  # You can get this ID in the section where you registered the SSH Key
-                  fingerprints:
-                      ["d3:78:08:20:e3:bd:07:43:0a:04:8a:9a:de:16:b9:fc"]
-            - run:
-                  name: Install Ansible
-                  command: |
-                      apk add --update ansible
-            - run:
-                  name: Run Playbook and Configure server
-                  command: |
-                      ansible-playbook -i inventory.txt main.yml
-    # Exercise: Smoke Testing
-    smoke_test:
-        docker:
-            - image: alpine:latest
-        steps:
-            - run: apk add --update curl
-            - run:
-                  name: smoke test
-                  command: return 1
-                  #   command: |
-                  #       URL="https://blog.udacity.com/"
-                  #       # Test if website exists
-                  #       if curl -s --head ${URL}
-                  #       then
-                  #           return 0
-                  #       else
-                  #           return 1
-                  #       fi
-
+            - run: return 1
             - destroy_environment
               when: on_fail
+    # # Exercise: Config and Deployment
+    # configure_infrastructure:
+    #     docker:
+    #         - image: python:3.7-alpine3.11
+    #     steps:
+    #         - checkout
+    #         - add_ssh_keys:
+    #               # You can get this ID in the section where you registered the SSH Key
+    #               fingerprints:
+    #                   ["d3:78:08:20:e3:bd:07:43:0a:04:8a:9a:de:16:b9:fc"]
+    #         - run:
+    #               name: Install Ansible
+    #               command: |
+    #                   apk add --update ansible
+    #         - run:
+    #               name: Run Playbook and Configure server
+    #               command: |
+    #                   ansible-playbook -i inventory.txt main.yml
+    # # Exercise: Smoke Testing
+    # smoke_test:
+    #     docker:
+    #         - image: alpine:latest
+    #     steps:
+    #         - run: apk add --update curl
+    #         - run:
+    #               name: smoke test
+    #               command: return 1
+    #               #   command: |
+    #               #       URL="https://blog.udacity.com/"
+    #               #       # Test if website exists
+    #               #       if curl -s --head ${URL}
+    #               #       then
+    #               #           return 0
+    #               #       else
+    #               #           return 1
+    #               #       fi
+    #         - destroy_environment
+    #           when: on_fail
 workflows:
     # Name the workflow
     myWorkflow:
         jobs:
             - create_infrastructure
-            - configure_infrastructure
-            - smoke_test
+            # - configure_infrastructure
+            # - smoke_test
 #
