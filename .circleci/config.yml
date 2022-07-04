@@ -262,7 +262,7 @@ jobs:
                       --stack-name stack-create-bucket-${CIRCLE_WORKFLOW_ID:0:7} \
                       --parameter-overrides MyBucketName="my-${CIRCLE_WORKFLOW_ID:0:7}"
                   # Uncomment the step below if yoou wish to upload all contents of the current directory to the S3 bucket
-            - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete
+            # - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete
     # Fetch and save the pipeline ID (bucket ID) responsible for the last release.
     get_last_deployment_id:
         docker:
@@ -319,4 +319,6 @@ workflows:
             # - smoke_test
             - create_and_deploy_front_end
             - get_last_deployment_id
+            - promote_to_production
+            - clean_up_old_front_end
 #
