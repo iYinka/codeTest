@@ -263,6 +263,23 @@ jobs:
                       --parameter-overrides MyBucketName="my-${CIRCLE_WORKFLOW_ID:0:7}"
                   # Uncomment the step below if yoou wish to upload all contents of the current directory to the S3 bucket
             - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete
+    # Fetch and save the pipeline ID (bucket ID) responsible for the last release.
+    get_last_deployment_id:
+        docker:
+            - image: amazon/aws-cli
+    steps:
+        - checkout
+        - run: yum install -y tar gzip
+        - run:
+              name: Fetch and save the old pipeline ID (bucket name) responsible for the last release.
+              command: |
+                  aws cloudformation \
+                  list-exports --query "Exports[?Name==\`PipelineID\`].Value" \
+                  --no-paginate --output text > ~/textfile.txt
+        - persist_to_workspace:
+              root: ~/
+              paths:
+                  - textfile.txt
 workflows:
     # Name the workflow
     myWorkflow:
