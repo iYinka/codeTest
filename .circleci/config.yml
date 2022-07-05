@@ -293,7 +293,7 @@ jobs:
                   command: |
                       aws cloudformation deploy \
                       --template-file cloudfront.yml \
-                      --stack-name production-distro \
+                      --stack-name production \
                       --parameter-overrides PipelineID="mybucket-${CIRCLE_WORKFLOW_ID:0:7}"
     clean_up_old_front_end:
         docker:
@@ -308,8 +308,8 @@ jobs:
                   # Use $OldBucketID environment variable or mybucket644752792305 below.
                   # Similarly, you can create and use $OldStackID environment variable in place of production-distro
                   command: |
-                      export OldBucketID=$(cat ~/textfile.txt)
-                      aws s3 rm "s3://${OldBucketID}" --recursive
+                      #   export OldBucketID=$(cat ~/textfile.txt)
+                        aws s3 rm "s3://my466573705235" --recursive
 workflows:
     # Name the workflow
     myWorkflow:
